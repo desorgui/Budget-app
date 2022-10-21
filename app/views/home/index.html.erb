@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Recipes</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "p-home-container", "data-turbo-track": "reload" %>
+  </head>
+  <body>
+    <div class="p_home__container">
+      <div class="brand_text" id="brand">
+        <%= "MoneyTracker." %>
+      </div>
+
+      <div class="p_home__content">
+        <div class="p_home__content__subtitle">
+          <%= "Track money Save money" %>
+        </div>
+
+        <div class="p_home__content__login__btn">
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+        </div>
+
+        <div class="p_home__content__signup__btn">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

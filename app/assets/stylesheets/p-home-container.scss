@@ -1,0 +1,48 @@
+.p_home__container {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+  background-color: #09090a;
+  color: #fff;
+  padding: 3rem 2rem;
+
+  .brand_text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .p_home__content__login__btn a {
+    background-color: #fff;
+    color: #09090a;
+    border: none;
+    border-radius: 100px;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #09090a;
+      color: #fff;
+    }
+  }
+
+  .p_home__content__signup__btn a {
+    background-color: #fff;
+  }
+
+  .p_home__content__subtitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 1.6rem;
+  }
+}
