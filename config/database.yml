@@ -1,0 +1,31 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ruby_budget_app_development
+  # username: docker
+  # password: docker
+  username: postgres
+  password: jesulamo@1995
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: ruby_budget_app_test
+  # username: docker
+  # password: docker
+  username: postgres
+  password: jesulamo@1995
+  host: localhost
+  port: 5432
+
+production:
+  <<: *default
+  database: ruby_budget_app_production
+  username: microverse_recipe_app
+  password: <%= ENV["MICROVERSE_RECIPE_APP_DATABASE_PASSWORD"] %>
