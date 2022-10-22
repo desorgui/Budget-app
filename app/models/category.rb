@@ -7,7 +7,7 @@ class Category < ApplicationRecord
   scope :by_user, ->(user) { where(user:) }
 
   validate :image_type
-  validates :title , presence: true, length: { minimum: 3, maximum: 50 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 50 }
 
   private
 

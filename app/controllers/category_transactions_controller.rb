@@ -1,5 +1,5 @@
 class CategoryTransactionsController < ApplicationController
-  before_action :set_category_transaction, only: %i[ show edit update destroy ]
+  before_action :set_category_transaction, only: %i[show edit update destroy]
 
   # GET /category_transactions or /category_transactions.json
   def index
@@ -22,8 +22,7 @@ class CategoryTransactionsController < ApplicationController
   end
 
   # GET /category_transactions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /category_transactions or /category_transactions.json
   def create
@@ -33,7 +32,10 @@ class CategoryTransactionsController < ApplicationController
 
     respond_to do |format|
       if @category_transaction.save
-        format.html { redirect_to category_transaction_url(@category_transaction), notice: "Category transaction was successfully created." }
+        format.html do
+          redirect_to category_transaction_url(@category_transaction),
+                      notice: 'Category transaction was successfully created.'
+        end
         format.json { render :show, status: :created, location: @category_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +48,10 @@ class CategoryTransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @category_transaction.update(category_transaction_params)
-        format.html { redirect_to category_category_transaction_url(@category_transaction), notice: "Category transaction was successfully updated." }
+        format.html do
+          redirect_to category_category_transaction_url(@category_transaction),
+                      notice: 'Category transaction was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @category_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,7 +65,10 @@ class CategoryTransactionsController < ApplicationController
     @category_transaction.destroy
 
     respond_to do |format|
-      format.html { redirect_to "/categories/#{params[:category_id]}/category_transactions", notice: "Category transaction was successfully destroyed." }
+      format.html do
+        redirect_to "/categories/#{params[:category_id]}/category_transactions",
+                    notice: 'Category transaction was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -68,13 +76,14 @@ class CategoryTransactionsController < ApplicationController
   # method to calculate the total amount of money spent in a category
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category_transaction
-      @category_transaction = CategoryTransaction.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_transaction_params
-      params.require(:category_transaction).permit(:name, :photo, :description, :payment, :category_id, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category_transaction
+    @category_transaction = CategoryTransaction.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_transaction_params
+    params.require(:category_transaction).permit(:name, :photo, :description, :payment, :category_id, :image)
+  end
 end

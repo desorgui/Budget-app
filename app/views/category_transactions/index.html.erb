@@ -1,18 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>User transactions</h1>
+<h1 class="page_title">Transactions</h1>
 
 <div id="user_transactions">
 <%# display total transaction %>
-  <p>
-    <strong>$ <%= @total %></strong>
+  <p class=>
+    <span><strong>Total transactions:</strong></span>
+    <span>$ <%= @total %></span>
   </p>
   <% @category_transactions.each do |category_transaction| %>
-    <%= render category_transaction %>
-    <p>
-      <%= link_to "Show this user transaction", category_category_transaction_path(id: category_transaction.id) %>
-    </p>
+    <div class="single-category">
+      <%= render category_transaction %>
+      <div>
+      <p>
+        <%= "$ #{ category_transaction.payment }"%>
+      </p>      
+      <p>
+        <%= link_to icon('fa-solid', 'arrow-right'), category_category_transaction_path(id: category_transaction.id) %>
+      </p>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New user transaction", new_category_category_transaction_path %>
+<div class="btn-add-new">
+  <%= link_to "New transaction", new_category_category_transaction_path %>
+</div>

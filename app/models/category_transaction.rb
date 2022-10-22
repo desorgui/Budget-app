@@ -6,10 +6,9 @@ class CategoryTransaction < ApplicationRecord
   scope :by_category, ->(category) { where(category:) }
 
   validate :image_type
-  validates :name , presence: true, length: { minimum: 3, maximum: 50 }
-  validates :description , presence: true, length: { minimum: 3, maximum: 500 }
-  validates :payment , presence: true, numericality: { greater_than: 0 }
-  
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :description, presence: true, length: { minimum: 3, maximum: 500 }
+  validates :payment, presence: true, numericality: { greater_than: 0 }
 
   private
 

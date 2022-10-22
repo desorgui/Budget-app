@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1 class="page_title">Categories</h1>
 
 <div id="categories">
   <% @categories.each_with_index do |category, index| %>
@@ -17,5 +17,6 @@
     </div>
   <% end %>
 </div>
-
+<div class="btn-add-new">
 <%= link_to "New category", new_category_path %>
+</div>

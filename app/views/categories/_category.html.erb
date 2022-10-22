@@ -8,7 +8,7 @@
   <div>
   <p>
     <strong>
-      <%= category.title %>
+      <%= link_to category.title, category_category_transactions_path(category.id) %>
     </strong>
   </p>
   <p>

@@ -1,15 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render "components/attached_img", 
-      image: @category_transaction.image, 
-      image_class: "c-recipe-view__img",
-      image_alt: "Category photo",
-      placeholder: "recipe_placeholder.jpg" 
-  %>
+<%= link_to "Back to user transactions", category_category_transactions_path %>
+<div class="category_transaction_show">
 <%= render @category_transaction %>
+<p>
+  <%= "#{@category_transaction.description}"%>
+</p>
+
+<p class="transaction_no">
+  <h3>Transaction No <%= "#{@category_transaction.id}"%></h3>
+</p>
+
+<p>
+  <span><i class="fa-regular fa-calendar-days"></i> 
+  <%= "#{@category_transaction.created_at.strftime("%F")}"%> at
+  <%= "#{@category_transaction.created_at.strftime("%T")}"%>
+  </span>
+</p>
+
+<p>
+  <span>Total payment: $ <%= "#{@category_transaction.payment}"%></span>
+</p>
 
 <div>
-  <%= link_to "Back to user transactions", category_transactions_path %>
-
   <%= button_to "Destroy this user transaction", @category_transaction, method: :delete %>
+</div>
 </div>
