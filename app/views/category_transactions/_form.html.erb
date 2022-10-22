@@ -1,4 +1,4 @@
-<%= form_with(model: @category_transaction, class: "c-new-recipe-form c-card") do |form| %>
+<%= form_with(model: @category_transaction,url: category_category_transactions_url, class: "c-new-recipe-form c-card") do |form| %>
   <% if @category_transaction.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@category_transaction.errors.count, "error") %> prohibited this category_transaction from being saved:</h2>

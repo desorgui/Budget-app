@@ -32,13 +32,25 @@ h1.page_title {
   margin-bottom: 2rem;
 }
 
-.btn-add-new {
+.btn-add-new, .btn-delete-item {
   display: flex;
   justify-content: center;
   background-color: var(--color-primary-400);
   color: #fff;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.category_transaction_show {
+  background-color: #fff;
+  padding: 2rem 1rem;
+}
+
+.see-details a {
+  font-size: 1.5em;
+  &:hover {
+    transform: translateX(0.5rem);
+  }
 }
 
 .category_transaction_show .transaction_category_time {
@@ -48,4 +60,13 @@ h1.page_title {
 .name_or_title a{
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.transaction_no {
+  padding: 2rem 0;
+}
+
+.total_payment {
+  display: flex;
+  justify-content: space-between;
 }

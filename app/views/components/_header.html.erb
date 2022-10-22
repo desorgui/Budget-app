@@ -16,9 +16,6 @@
 
     <nav class="c-header__nav">
       <ul class="c-header__nav-list">
-        <li>
-          <%= link_to "home", root_path, class: "c-header__nav-link" %>
-        </li>
         <% if current_user %>
           <li>
             <%= button_to "sign out", destroy_user_session_path, method: :delete, class: "c-header__nav-link" %>

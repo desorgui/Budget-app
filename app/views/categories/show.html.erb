@@ -2,6 +2,7 @@
 <%= render @category %>
 <div>
   <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+</div>
+<div class="btn-delete-item">
+  <%= link_to "Destroy this category", category_path(id: @category.id), data: { "turbo-method": :delete } %>
 </div>

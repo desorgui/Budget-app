@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to "Back to categories", categories_path %>
+
 <h1 class="page_title">Transactions</h1>
 
 <div id="user_transactions">
@@ -15,7 +17,7 @@
       <p>
         <%= "$ #{ category_transaction.payment }"%>
       </p>      
-      <p>
+      <p class="see-details">
         <%= link_to icon('fa-solid', 'arrow-right'), category_category_transaction_path(id: category_transaction.id) %>
       </p>
       </div>

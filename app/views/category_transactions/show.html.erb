@@ -1,28 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Back to user transactions", category_category_transactions_path %>
+<%= link_to "Back to user transactions", category_category_transactions_path(params[:category_id ]) %>
 <div class="category_transaction_show">
 <%= render @category_transaction %>
 <p>
   <%= "#{@category_transaction.description}"%>
 </p>
 
-<p class="transaction_no">
+<div class="transaction_no">
   <h3>Transaction No <%= "#{@category_transaction.id}"%></h3>
-</p>
-
-<p>
   <span><i class="fa-regular fa-calendar-days"></i> 
-  <%= "#{@category_transaction.created_at.strftime("%F")}"%> at
-  <%= "#{@category_transaction.created_at.strftime("%T")}"%>
+    <%= "#{@category_transaction.created_at.strftime("%F")}"%> at
+    <%= "#{@category_transaction.created_at.strftime("%T")}"%>
   </span>
-</p>
-
-<p>
-  <span>Total payment: $ <%= "#{@category_transaction.payment}"%></span>
-</p>
-
-<div>
-  <%= button_to "Destroy this user transaction", @category_transaction, method: :delete %>
 </div>
+
+<p class="total_payment">
+  <span>Total payment: </span> <span>$ <%= "#{@category_transaction.payment}"%></span>
+</p>
+</div>
+<div class="btn-delete-item">
+  <%= link_to "Delete transaction", category_category_transaction_path, data: { "turbo-method": :delete } %>
 </div>
