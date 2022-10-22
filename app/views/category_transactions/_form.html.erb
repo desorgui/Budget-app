@@ -1,4 +1,4 @@
-<%= form_with(model: @category_transaction, url: "/category/2/category_transaction/create", class: "c-new-recipe-form c-card") do |form| %>
+<%= form_with(model: @category_transaction, class: "c-new-recipe-form c-card") do |form| %>
   <% if @category_transaction.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@category_transaction.errors.count, "error") %> prohibited this category_transaction from being saved:</h2>
@@ -11,24 +11,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="c-new-recipe-form__upload">
+    <img class="c-new-recipe-form__img" src=<%= image_url("recipe_placeholder.jpg") %> alt="" />
+    <%= form.label :upload_image %>
+    <%= form.file_field :image, required: true  %>
   </div>
 
   <div>
-    <%= form.label :photo, style: "display: block" %>
-    <%= form.text_field :photo %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, required: true  %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :photo, :value => "Photo" %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :category_id, :value => params[:category_id] %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, required: true  %>
   </div>
 
   <div>
     <%= form.label :payment, style: "display: block" %>
-    <%= form.text_field :payment %>
+    <%= form.text_field :payment, required: true, value: 0.0 %>
   </div>
 
   <div>

@@ -1,9 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user_transaction %>
+<%= render "components/attached_img", 
+      image: @category_transaction.image, 
+      image_class: "c-recipe-view__img",
+      image_alt: "Category photo",
+      placeholder: "recipe_placeholder.jpg" 
+  %>
+<%= render @category_transaction %>
 
 <div>
-  <%= link_to "Edit this user transaction", edit_user_transaction_path(@category_transaction) %> |
   <%= link_to "Back to user transactions", category_transactions_path %>
 
   <%= button_to "Destroy this user transaction", @category_transaction, method: :delete %>

@@ -1,12 +1,19 @@
-<div id="<%= dom_id category %>">
+<div id="<%= dom_id category %>" class="single-category__details">
+<%= render "components/attached_img", 
+      image: category.image, 
+      image_class: "c-recipe-view__img",
+      image_alt: "Category photo",
+      placeholder: "recipe_placeholder.jpg" 
+  %>
+  <div>
   <p>
-    <strong>Title:</strong>
-    <%= category.title %>
+    <strong>
+      <%= category.title %>
+    </strong>
   </p>
-
   <p>
-    <strong>Photo:</strong>
-    <%= category.photo %>
+    <%= category.created_at.strftime("%F")%>
   </p>
+  </div>
 
 </div>

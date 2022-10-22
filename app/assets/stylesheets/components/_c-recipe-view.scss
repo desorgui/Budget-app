@@ -51,12 +51,11 @@
 
   &__img {
     align-self: center;
-    width: 100%;
-    height: auto;
+    width: 7rem;
+    height: 7rem;
     max-height: 40rem;
     object-fit: cover;
     border-radius: 1.6rem;
-    margin-bottom: 2.4rem;
     // box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     // box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     // border: 5px solid var(--color-primary);

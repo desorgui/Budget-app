@@ -4,11 +4,24 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.where(user: current_user).includes(:user)
+    @totals = []
+    @categories.each do |category|
+      @totals << find_total(category.id)
+    end
   end
 
   # GET /categories/1 or /categories/1.json
   def show
     @category = Category.includes(:user).find(params[:id])
+  end
+
+  def find_total(category_id)
+    @category_transactions = CategoryTransaction.where(category: category_id).includes(:category)
+    @total1 = 0
+    @category_transactions.each do |category_transaction|
+      @total1 += category_transaction.payment
+    end
+    @total1
   end
 
   # GET /categories/new
@@ -66,6 +79,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:title, :photo)
+      params.require(:category).permit(:title, :photo, :image)
     end
 end

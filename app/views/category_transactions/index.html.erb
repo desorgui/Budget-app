@@ -3,10 +3,14 @@
 <h1>User transactions</h1>
 
 <div id="user_transactions">
+<%# display total transaction %>
+  <p>
+    <strong>$ <%= @total %></strong>
+  </p>
   <% @category_transactions.each do |category_transaction| %>
     <%= render category_transaction %>
     <p>
-      <%= link_to "Show this user transaction", category_category_transaction_path %>
+      <%= link_to "Show this user transaction", category_category_transaction_path(id: category_transaction.id) %>
     </p>
   <% end %>
 </div>

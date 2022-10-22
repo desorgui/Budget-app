@@ -27,4 +27,10 @@ class ApplicationController < ActionController::Base
       format.html { redirect_to root_path, alert: 'You are not authorized to complete this action.' }
     end
   end
+
+  private
+
+  def after_sign_in_path_for(resource)
+    categories_path
+  end
 end

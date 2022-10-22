@@ -13,7 +13,7 @@
     <%= stylesheet_link_tag "p-home-container", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <div class="p_home__container">
+    <div class="p_home__container" style="background-image:url(<%= image_url('card-bg.png') %>)">
       <div class="brand_text" id="brand">
         <%= "MoneyTracker." %>
       </div>
@@ -22,13 +22,20 @@
         <div class="p_home__content__subtitle">
           <%= "Track money Save money" %>
         </div>
-
-        <div class="p_home__content__login__btn">
-          <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+        <div class="p_home_login">
+          <div class="p_home__content__login__btn">
+            <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+          </div>
+          <div class="p_home__content__social__btn">
+            <img src="<%= image_url('apple1.svg') %>" alt="Apple login" class="p_home__content__apple__login__img">
+          </div>
+          <div class="p_home__content__social__btn">
+            <img src="<%= image_url('google.svg') %>" alt="Apple login" class="p_home__content__apple__login__img">
+          </div>
         </div>
 
         <div class="p_home__content__signup__btn">
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

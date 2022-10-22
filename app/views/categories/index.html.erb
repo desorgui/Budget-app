@@ -3,11 +3,18 @@
 <h1>Categories</h1>
 
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+  <% @categories.each_with_index do |category, index| %>
+    <div class="single-category">
+      <%= render category %>
+      <div>
+      <p>
+        <%= "$ #{ @totals[index] }"%>
+      </p>      
+      <p>
+        <%= link_to icon('fa-solid', 'arrow-right'), category_category_transactions_path(category.id) %>
+      </p>
+      </div>
+    </div>
   <% end %>
 </div>
 

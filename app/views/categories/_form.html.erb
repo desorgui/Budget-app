@@ -11,14 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="c-new-recipe-form__upload">
+    <img class="c-new-recipe-form__img" src=<%= image_url("recipe_placeholder.jpg") %> alt="" />
+    <%# <%= form.label :upload_image %> 
+    <%= form.file_field :image, required: true %>
   </div>
 
   <div>
-    <%= form.label :photo, style: "display: block" %>
-    <%= form.text_field :photo %>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, required: true  %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :photo, :value => "Photo" %>
   </div>
 
   <div>
