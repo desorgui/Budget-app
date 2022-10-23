@@ -1,7 +1,6 @@
 <div class="px-5 d-flex flex-column gap-5">
   <div>
     <h2>Create an account</h2>
-    <p>Let’s help you set up your account, it won’t take long.</p>
   </div>
 
   <div class="d-flex flex-column justify-content-center align-items-center gap-1">
@@ -11,12 +10,12 @@
       <div class="card p-5 mb-3 d-flex flex-column justify-content-center gap-3">
         <div class="field">
           <%= f.label :name %><br />
-          <%= f.text_field :name, class: 'form-control form-control-lg' %>
+          <%= f.text_field :name, autofocus: true, class: 'form-control form-control-lg' %>
         </div>
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
+          <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg' %>
         </div>
 
         <div class="field">

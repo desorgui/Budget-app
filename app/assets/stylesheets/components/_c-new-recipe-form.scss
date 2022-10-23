@@ -10,6 +10,8 @@
     & > label {
       position: absolute;
       bottom: 0;
+      padding: 4px 7px;
+      border: solid 1px #bbb;
 
       &:hover {
         text-decoration: underline;
@@ -17,6 +19,7 @@
     }
 
     & > input {
+      opacity: 0;
       cursor: pointer;
     }
   }

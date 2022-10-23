@@ -11,12 +11,6 @@
     </div>
   <% end %>
 
-  <div class="c-new-recipe-form__upload">
-    <img class="c-new-recipe-form__img" src=<%= image_url("recipe_placeholder.jpg") %> alt="" />
-    <%= form.label :upload_image %>
-    <%= form.file_field :image, required: true  %>
-  </div>
-
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, required: true  %>
@@ -38,6 +32,11 @@
   <div>
     <%= form.label :payment, style: "display: block" %>
     <%= form.text_field :payment, required: true, value: 0.0 %>
+  </div>
+
+  <div class="c-new-recipe-form__upload">
+    <%= form.label :upload_image, class: "upload_label" %>
+    <%= form.file_field :image, required: true  %>
   </div>
 
   <div>
