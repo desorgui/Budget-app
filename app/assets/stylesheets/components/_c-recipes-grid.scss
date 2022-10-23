@@ -78,6 +78,11 @@ form {
   gap: 1rem;
   div {
     width: 100%;
+    .submit-btn {
+      background-color: var(--color-primary-400);
+      color: #fff;
+      border: none;
+    }
     input, textarea {
       width: 100%;
       padding: 0.5rem 1rem;
