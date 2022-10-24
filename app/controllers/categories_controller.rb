@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action only: %i[index show edit new destroy]
+  before_action only: %i[index show edit new destroy]  
+  before_action :authenticate_user!
 
   # GET /categories or /categories.json
   def index
