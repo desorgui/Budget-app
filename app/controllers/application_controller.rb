@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied, with: :handle_auth_error
 
-  protect_from_forgery with: :null_session
+  before_action :authenticate_user!
   before_action :update_allowed_parameters, if: :devise_controller?
 
   protected
@@ -26,5 +26,15 @@ class ApplicationController < ActionController::Base
     respond_to do |format|
       format.html { redirect_to root_path, alert: 'You are not authorized to complete this action.' }
     end
+  end
+
+  private
+
+  def after_sign_in_path_for(_resource)
+    categories_path
+  end
+
+  def after_sign_out_path_for(_resource)
+    new_user_session_path
   end
 end

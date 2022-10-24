@@ -12,30 +12,13 @@
 
 <header class="c-header">
   <div class="c-header__content">
-    <%= link_to 'Recipe App', root_path, class: 'c-header__logo' %>
+    <%= link_to 'Budget App', root_path, class: 'c-header__logo' %>
 
     <nav class="c-header__nav">
       <ul class="c-header__nav-list">
-        <li>
-          <%= link_to "home", root_path, class: "c-header__nav-link" %>
-        </li>
         <% if current_user %>
           <li>
             <%= button_to "sign out", destroy_user_session_path, method: :delete, class: "c-header__nav-link" %>
-          </li>
-          <li>
-            <%= button_to nil, 
-              remote: true,
-              class: "c-icon-btn",
-              data: {
-              controller: "hdropdowns",
-              action: "hdropdowns#toggleDropdown",
-              hdropdowns_id_param: "create-header-dropdown",
-            } do %>
-              <svg class="c-icon--sm">
-                <use xlink:href=<%= image_url("icons/sprite.svg#plus")%>></use>
-              </svg>
-            <% end %>
           </li>
           <li>
             <%= button_to nil, remote: true, class: "c-header__user-btn",
@@ -63,16 +46,4 @@
       </ul>
     </nav>
   </div>
-
-  <%= render "components/header_dropdown", 
-    id: "create-header-dropdown",
-    title: "create",
-    buttons: create_dropdown_btns 
-  %>
-
-  <%= render "components/header_dropdown", 
-    id: "user-header-dropdown",
-    title: "my account",
-    buttons: user_dropdown_btns 
-  %>
 </header>

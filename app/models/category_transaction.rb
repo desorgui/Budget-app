@@ -1,13 +1,14 @@
-class Category < ApplicationRecord
-  belongs_to :user
+class CategoryTransaction < ApplicationRecord
+  belongs_to :category
 
   has_one_attached :image
-  has_many :category_trasactions, dependent: :destroy
 
-  scope :by_user, ->(user) { where(user:) }
+  scope :by_category, ->(category) { where(category:) }
 
   validate :image_type
-  validates :title, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :description, presence: true, length: { minimum: 3, maximum: 500 }
+  validates :payment, presence: true, numericality: { greater_than: 0 }
 
   private
 

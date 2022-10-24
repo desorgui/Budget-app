@@ -84,6 +84,13 @@ $ rails s
 - Twitter: [@DGuishny](https://twitter.com/DGuishny)
 - LinkedIn: [Guishny Desor](https://www.linkedin.com/in/guishny-desor-5421a01a9/)
 
+
+## Acknowledgments
+
+- the design followed was developped by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). you can find the lincese [here](https://creativecommons.org/licenses/by-nc/4.0/)
+- Google and Stack Overflow.
+- Inspiration.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
