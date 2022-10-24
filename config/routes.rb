@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   end
   resources :category_transactions
   root "home#index"
+
+  get '/', to: 'home#index'
 end
