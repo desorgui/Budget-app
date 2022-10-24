@@ -1,0 +1,19 @@
+<div id="<%= dom_id category_transaction %>" class="single-category__details">
+<%= render "components/attached_img", 
+      image: category_transaction.image, 
+      image_class: "c-recipe-view__img",
+      image_alt: "Category photo",
+      placeholder: "food_placeholder.jpg" 
+  %>
+  <div>
+  <p>
+    <h3 class="name_or_title">
+      <%= link_to category_transaction.name, category_category_transaction_path(id: category_transaction.id) %>
+    </h3>
+  </p>
+
+  <p class="transaction_category_time">
+    <%= category_transaction.created_at.strftime("%F")%>
+  </p>
+  </div>
+</div>
